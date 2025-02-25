@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: automated_revenue_checking_project
+    env_file:
+      - .env
+    environment:
+      HOST: ${HOST}
+      USER: ${USER}
+      PASS_WORD: ${PASS_WORD}
+      DATABASE: ${DATABASE}
+      PORT: ${PORT}
+      DATABASE_URL: ${DATABASE_URL}
+    ports:
+      - "${APP_PORT}:${CONTAINER_PORT}"
